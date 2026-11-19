@@ -2,7 +2,15 @@
  * Royal Grace — Muhammad Yousaf Malik & Gulnaz Amjad Wedding Invitation
  */
 
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+window.scrollTo(0, 0);
+window.addEventListener("beforeunload", () => window.scrollTo(0, 0));
+window.addEventListener("pageshow", () => window.scrollTo(0, 0));
+
 document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
   document.body.classList.add("locked");
 
   /* ----------------------------------------------------------------------
@@ -19,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   openInviteBtn.addEventListener("click", () => {
     curtainStage.classList.add("opened");
     document.body.classList.remove("locked");
+    window.scrollTo(0, 0);
 
     // Start romantic wedding music on user gesture
     if (window.weddingMusic) {
