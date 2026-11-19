@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yousaf &amp; Gulle e Yousaf — Royal Grace Wedding Invitation</title>
+  <title>Muhammad Yousaf Malik &amp; Gulnaz Amjad — Wedding Invitation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Marcellus&family=Passions+Conflict&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Marcellus&family=Passions+Conflict&family=Playwrite+AU+SA:wght@300;400&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <!-- 1. PRELOADER -->
@@ -23,22 +23,26 @@
     </div>
   </div>
 
-  <!-- 2. GATEFOLD CARD COVER -->
-  <div id="gatefold" class="gatefold" role="dialog" aria-label="Wedding Invitation Cover">
-    <div class="gatefold-door gatefold-left">
-      <div class="damask-overlay"></div>
-      <div class="gold-filigree-frame left-frame"></div>
+  <!-- 2. ROYAL CURTAIN COVER (PARTS SIDEWAYS LIKE THEATRE/PALACE CURTAINS) -->
+  <div id="curtain-stage" class="curtain-stage" role="dialog" aria-label="Wedding Invitation Curtain Cover">
+    <div class="curtain-rod" aria-hidden="true"></div>
+
+    <div class="curtain-panel curtain-left">
+      <div class="curtain-pleats"></div>
+      <div class="curtain-damask"></div>
+      <div class="curtain-gold-trim trim-right"></div>
     </div>
-    <div class="gatefold-door gatefold-right">
-      <div class="damask-overlay"></div>
-      <div class="gold-filigree-frame right-frame"></div>
+
+    <div class="curtain-panel curtain-right">
+      <div class="curtain-pleats"></div>
+      <div class="curtain-damask"></div>
+      <div class="curtain-gold-trim trim-left"></div>
     </div>
 
     <button id="open-invite-btn" class="rococo-plaque" type="button" aria-label="Tap to open wedding invitation">
       <span class="plaque-pearl-ring"></span>
       <span class="plaque-content">
-        <span class="plaque-monogram">Y &amp; G</span>
-        <span class="plaque-names">Yousaf &amp; Gulle e Yousaf</span>
+        <span class="plaque-names">Muhammad Yousaf Malik<br /><span class="plaque-amp">&amp;</span><br />Gulnaz Amjad</span>
         <span class="plaque-divider"></span>
         <span class="plaque-cta" data-i18n="tapToOpen">TAP TO OPEN</span>
       </span>
@@ -104,16 +108,22 @@
       </div>
 
       <div class="hero-content">
-        <p class="hero-eyebrow" data-i18n="wereGettingMarried">WE'RE GETTING MARRIED</p>
+        <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+        <p class="hero-eyebrow" data-i18n="togetherFamilies">TOGETHER WITH THEIR FAMILIES</p>
+        <p class="hero-subeyebrow" data-i18n="delightedInvite">WE ARE DELIGHTED TO INVITE YOU TO THE WEDDING CELEBRATION OF</p>
+
         <h1 class="hero-names">
-          <span class="name-line">Yousaf</span>
-          <span class="name-amp">&amp;</span>
-          <span class="name-line">Gulle e Yousaf</span>
+          <span class="name-line">Muhammad Yousaf Malik</span>
+          <span class="name-parentage">S/O Muhammad Ilyas Malik</span>
+          <span class="name-amp">weds</span>
+          <span class="name-line">Gulnaz Amjad</span>
+          <span class="name-parentage">D/O Ajmad Husaain</span>
         </h1>
 
         <div class="hero-credentials">
-          <p><strong>Yousaf</strong> &middot; <span data-i18n="groomParentage">Son of Mr. &amp; Mrs. Tariq</span></p>
-          <p><strong>Gulle e Yousaf</strong> &middot; <span data-i18n="brideParentage">Daughter of Mr. &amp; Mrs. Khan</span></p>
+          <p data-i18n="heroBlessing">
+            We would be honoured by your presence to bless the newlyweds as they begin their new journey together.
+          </p>
         </div>
 
         <a href="#welcome" class="scroll-indicator" aria-label="Scroll down">
@@ -128,30 +138,25 @@
     <!-- PAPER LINEN BODY -->
     <div class="linen-body">
       <!-- SECTION 2: WELCOME BLESSING -->
-      <section id="welcome" class="invite-section reveal">
-        <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+      <section id="welcome" class="invite-section">
         <p class="welcome-text" data-i18n="welcomeText">
-          We are honored to welcome you to the Wedding ceremony of <strong>Yousaf &amp; Gulle e Yousaf</strong>.
-          As they begin their journey together in faith and love, we thank you for being part of this blessed occasion ❤
+          Together with their families, we are delighted to invite you to the wedding celebration of
+          <strong>Muhammad Yousaf Malik &amp; Gulnaz Amjad</strong>. We would be honoured by your presence to bless
+          the newlyweds as they begin their new journey together ❤
         </p>
         <div class="heart-divider"><span>&hearts;</span></div>
       </section>
 
-      <!-- SECTION 3: INTERACTIVE SCRATCH TO REVEAL -->
+      <!-- SECTION 3: WEDDING DATES -->
       <section class="invite-section reveal">
-        <h2 class="script-heading" data-i18n="scratchTitle">Scratch to Reveal</h2>
-        <p class="section-subhint" data-i18n="scratchHint">Gently rub the emerald heart below to reveal our wedding date</p>
-
         <div class="scratch-wrapper">
           <div class="scratch-card">
             <div class="scratch-revealed-content">
-              <span class="revealed-kicker">THE NIKAH &amp; CEREMONY</span>
-              <p class="revealed-date">January 31, 2027</p>
-              <p class="revealed-time">Sunday &middot; 10:30 AM</p>
+              <span class="revealed-kicker">BARAT &amp; WALEEMA</span>
+              <p class="revealed-date">19 – 20 Dec 2026</p>
+              <p class="revealed-time">Mehndi: 18 Dec &middot; 7:00 PM</p>
             </div>
-            <canvas id="scratch-canvas" width="300" height="240" aria-label="Scratch off emerald heart to reveal wedding date"></canvas>
           </div>
-          <button id="reveal-fallback-btn" class="text-link-btn" type="button">Tap to reveal instantly</button>
         </div>
 
         <button id="save-date-btn" class="sage-btn" type="button">
@@ -167,28 +172,56 @@
         <div class="heart-divider"><span>&hearts;</span></div>
       </section>
 
-      <!-- SECTION 4: COUPLE PHOTO CAROUSEL -->
+      <!-- SECTION 4: WEDDING CELEBRATIONS -->
       <section class="invite-section reveal">
-        <div class="carousel-card">
-          <div class="carousel-track" id="carousel-track">
-            <div class="carousel-slide active">
-              <img src="assessts/couple-1.jpg" alt="Yousaf and Gulle e Yousaf Royal Portrait" />
-            </div>
-            <div class="carousel-slide">
-              <img src="assessts/couple-2.jpg" alt="Yousaf and Gulle e Yousaf Hands &amp; Roses" />
-            </div>
-            <div class="carousel-slide">
-              <img src="assessts/hero-balcony.jpg" alt="Royal Palace Wedding Setting" />
-            </div>
+        <h2 class="script-heading" data-i18n="timelineTitle">Wedding Celebrations</h2>
+
+        <div class="events-trio">
+          <div class="event-arch-card">
+            <span class="event-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <path d="M12 22V8"></path>
+                <path d="M12 13c-3.5 0-6-2.5-6-6 3.5 0 6 2.5 6 6z"></path>
+                <path d="M12 11c3.5 0 6-2.5 6-6-3.5 0-6 2.5-6 6z"></path>
+              </svg>
+            </span>
+            <span class="event-badge">Mehndi</span>
+            <p class="event-day">Friday</p>
+            <p class="event-date">18 Dec 2026</p>
+            <p class="event-time">At 7:00 PM</p>
           </div>
-          <button class="carousel-arrow prev" id="carousel-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
-          <button class="carousel-arrow next" id="carousel-next" type="button" aria-label="Next photo">&rsaquo;</button>
+
+          <div class="event-arch-card featured">
+            <span class="event-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="9" cy="14" r="5"></circle>
+                <circle cx="15" cy="14" r="5"></circle>
+                <path d="M12 5l1.2 2.4L15 8l-1.8.6L12 11l-1.2-2.4L9 8l1.8-.6z"></path>
+              </svg>
+            </span>
+            <span class="event-badge">Barat</span>
+            <p class="event-day">Saturday</p>
+            <p class="event-date">19 Dec 2026</p>
+            <p class="event-time">At 6:00 PM</p>
+          </div>
+
+          <div class="event-arch-card">
+            <span class="event-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="5"></circle>
+                <path d="M4 6v12"></path>
+                <path d="M20 6v12"></path>
+                <path d="M20 6a2 2 0 0 0-2 2v3h2"></path>
+              </svg>
+            </span>
+            <span class="event-badge">Waleema</span>
+            <p class="event-day">Sunday</p>
+            <p class="event-date">20 Dec 2026</p>
+            <p class="event-time">At 6:00 PM</p>
+          </div>
         </div>
-        <div class="carousel-dots" id="carousel-dots">
-          <button type="button" class="dot active" data-index="0" aria-label="Photo 1"></button>
-          <button type="button" class="dot" data-index="1" aria-label="Photo 2"></button>
-          <button type="button" class="dot" data-index="2" aria-label="Photo 3"></button>
-        </div>
+
+        <div class="heart-divider"><span>&hearts;</span></div>
       </section>
 
       <!-- SECTION 5: COUNTDOWN TIMER -->
@@ -215,209 +248,78 @@
         <div class="heart-divider"><span>&hearts;</span></div>
       </section>
 
-      <!-- SECTION 6: PROGRAM TIMELINE -->
-      <section class="invite-section reveal">
-        <h2 class="script-heading" data-i18n="timelineTitle">Program Timeline</h2>
-
-        <div class="timeline-day">
-          <p class="timeline-date-badge">Sunday, Jan 31, 2027</p>
-          <div class="timeline-list">
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-card">
-                <span class="timeline-time">10:00 AM</span>
-                <h3 class="timeline-event">Guest Arrival</h3>
-                <p class="timeline-note">We welcome you.. ❤</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-card">
-                <span class="timeline-time">10:30 AM</span>
-                <h3 class="timeline-event">Nikah &amp; Wedding Ceremony</h3>
-                <p class="timeline-note">Your presence means a lot!</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-day">
-          <p class="timeline-date-badge">Tuesday, Feb 2, 2027</p>
-          <div class="timeline-list">
-            <div class="timeline-item">
-              <span class="timeline-dot"></span>
-              <div class="timeline-card">
-                <span class="timeline-time">7:30 PM</span>
-                <h3 class="timeline-event">Walima Reception</h3>
-                <p class="timeline-note">An evening of joy, dinner &amp; blessings</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 7: VENUE -->
-      <section class="invite-section reveal">
+      <!-- SECTION 6: VENUES (BARAT & WALEEMA IN ONE ROW) -->
+      <section class="invite-section venues-section reveal">
         <div class="section-icon">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </div>
-        <h2 class="script-heading" data-i18n="venueTitle">Venue</h2>
-        <p class="venue-name">Grand Royal Palace Hall</p>
-        <p class="venue-address">City Centre, Serena Boulevard</p>
-        <div class="map-frame">
-          <iframe
-            title="Grand Royal Palace Hall Map"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=73.065%2C33.705%2C73.115%2C33.735&amp;layer=mapnik"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
+        <h2 class="script-heading" data-i18n="venuesTitle">Wedding Venues</h2>
 
-      <!-- SECTION 8: DRESS CODE -->
-      <section class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 6a2 2 0 1 0-2-2c0 1.5 2 2 2 3.5L3 14.5A1.5 1.5 0 0 0 4 17h16a1.5 1.5 0 0 0 1-2.5L12 7.5z"></path>
-          </svg>
-        </div>
-        <h2 class="script-heading" data-i18n="dressCodeTitle">Dress Code</h2>
-        <div class="two-col-cards">
-          <div class="info-card">
-            <h3>Women</h3>
-            <p>Elegant formal attire in pastel, sage, or jewel tones</p>
+        <div class="venues-grid">
+          <!-- BARAT VENUE -->
+          <div class="venue-card">
+            <p class="venue-kicker" data-i18n="baratVenueKicker">VENUE (BARAT)</p>
+            <h3 class="venue-card-title">Barat Hall</h3>
+            <p class="venue-address">Gujrat &middot; Saturday, 19 Dec 2026 &middot; 6:00 PM</p>
+
+            <div class="map-frame">
+              <iframe
+                title="Barat Venue, Gujrat Map"
+                src="https://maps.google.com/maps?q=Gujrat,+Pakistan&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <a
+              href="https://maps.google.com/?q=Gujrat,+Pakistan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sage-btn map-link-btn"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="openDirections">Open in Google Maps</span>
+            </a>
           </div>
-          <div class="info-card">
-            <h3>Men</h3>
-            <p>Sherwani, tailored suit, or traditional formal wear</p>
+
+          <!-- WALEEMA VENUE -->
+          <div class="venue-card">
+            <p class="venue-kicker" data-i18n="venueKicker">VENUE (WALEEMA)</p>
+            <h3 class="venue-card-title">Noor Palace</h3>
+            <p class="venue-address">Kotla Arab Ali Khan &middot; Kotla Rd, near Zahid Fuelling Station</p>
+
+            <div class="map-frame">
+              <iframe
+                title="Noor Palace, Kotla Arab Ali Khan Map"
+                src="https://maps.google.com/maps?q=Noor+Palace,+Kotla+Rd,+near+Zahid+Fuelling+Station,+50990&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <a
+              href="https://maps.app.goo.gl/BdV5LudTi9Pm4cCG8?g_st=iw"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sage-btn map-link-btn"
+            >
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span data-i18n="openDirections">Open in Google Maps</span>
+            </a>
           </div>
-        </div>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 9: PRE-WEDDING EVENTS -->
-      <section class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7L12 16.5 5.7 21l2.3-7L2 9.4h7.6z"></path>
-          </svg>
-        </div>
-        <h2 class="script-heading" data-i18n="preWeddingTitle">Pre-Wedding Events</h2>
-        <div class="two-col-cards">
-          <div class="info-card">
-            <span class="mini-date">Thursday, Jan 28, 2027 &middot; 8:30 PM</span>
-            <h3>Mehndi</h3>
-            <p>At Bride's Residence</p>
-          </div>
-          <div class="info-card">
-            <span class="mini-date">Friday, Jan 29, 2027 &middot; 8:00 PM</span>
-            <h3>Haldi / Dholki</h3>
-            <p>At Groom's Residence</p>
-          </div>
-        </div>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 10: TRANSPORTATION -->
-      <section class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="3" y="11" width="18" height="6" rx="2"></rect>
-            <path d="M5 11l2-5h10l2 5"></path>
-            <circle cx="7.5" cy="17.5" r="1.5"></circle>
-            <circle cx="16.5" cy="17.5" r="1.5"></circle>
-          </svg>
-        </div>
-        <h2 class="script-heading" data-i18n="transportTitle">Transportation</h2>
-        <p class="body-copy">
-          Shuttle service will be available from the city center to the venue.<br />
-          Pickup point: Central Station at 9:15 AM.
-        </p>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 11: ACCOMMODATION -->
-      <section class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M3 21h18"></path>
-            <path d="M5 21V7l7-4 7 4v14"></path>
-            <path d="M9 21v-4h6v4"></path>
-          </svg>
-        </div>
-        <h2 class="script-heading" data-i18n="accommodationTitle">Accommodation</h2>
-        <p class="body-copy">
-          Special rates at The Grand Palace Hotel (5 min from venue).<br />
-          Use code <strong>YOUSAFGULLE2027</strong> when booking.
-        </p>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 12: GIFTS -->
-      <section class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <polyline points="20 12 20 22 4 22 4 12"></polyline>
-            <rect x="2" y="7" width="20" height="5"></rect>
-            <line x1="12" y1="22" x2="12" y2="7"></line>
-            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-          </svg>
-        </div>
-        <h2 class="script-heading" data-i18n="giftsTitle">Gifts</h2>
-        <p class="body-copy" data-i18n="giftsCopy">
-          Your love, blessings, and presence are the greatest gifts we could ever ask for.
-        </p>
-        <div class="heart-divider"><span>&hearts;</span></div>
-      </section>
-
-      <!-- SECTION 13: RSVP FORM -->
-      <section id="rsvp" class="invite-section reveal">
-        <div class="section-icon">
-          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <h2 class="script-heading">RSVP</h2>
-
-        <form id="rsvp-form" class="rsvp-form">
-          <div class="form-group">
-            <label for="guest-name">Your Name *</label>
-            <input type="text" id="guest-name" required placeholder="Enter your full name" />
-          </div>
-          <div class="form-group">
-            <label for="guest-attending">Will you be attending? *</label>
-            <select id="guest-attending" required>
-              <option value="" disabled selected>Select an option</option>
-              <option value="Joyfully Accepts">Joyfully Accepts</option>
-              <option value="Attending Nikah Only">Attending Nikah Only</option>
-              <option value="Attending Walima Only">Attending Walima Only</option>
-              <option value="Regretfully Declines">Regretfully Declines</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="guest-message">Your Message</label>
-            <textarea id="guest-message" rows="4" placeholder="Write your wishes..."></textarea>
-          </div>
-          <button type="submit" class="sage-btn submit-btn" data-i18n="sendMessage">Send Message</button>
-        </form>
-
-        <div id="rsvp-success" class="rsvp-success hidden">
-          <p>Thank you for your warm wishes! Your RSVP has been recorded for Yousaf &amp; Gulle e Yousaf.</p>
-        </div>
-
-        <div id="wishes-wall" class="wishes-wall hidden">
-          <p class="wishes-heading">Blessings &amp; Wishes</p>
-          <div id="wishes-list" class="wishes-list"></div>
         </div>
       </section>
 
-      <!-- SECTION 14: CLOSING SIGN-OFF WITH FAIRY LIGHTS -->
+      <!-- SECTION 8: CLOSING SIGN-OFF WITH FAIRY LIGHTS -->
       <section class="invite-section closing-section reveal">
         <svg class="fairy-lights-svg" viewBox="0 0 600 70" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0,18 Q150,48 300,22 T600,24" fill="none" stroke="rgba(74,96,70,0.28)" stroke-width="1" />
@@ -429,8 +331,8 @@
           <circle cx="545" cy="26" r="2.6" fill="#C5A059" opacity="0.65" />
         </svg>
 
-        <p class="closing-script" data-i18n="closingLine">We can't wait to celebrate with you!</p>
-        <p class="closing-signature">Yousaf &amp; Gulle e Yousaf</p>
+        <p class="closing-script" data-i18n="closingLine">Your presence will make our celebration more memorable.</p>
+        <p class="closing-signature">Mr &amp; Mrs Muhammad Ilyas Malik</p>
 
         <svg class="fairy-lights-svg" viewBox="0 0 600 50" preserveAspectRatio="none" aria-hidden="true">
           <path d="M0,25 Q150,5 300,28 T600,18" fill="none" stroke="rgba(74,96,70,0.25)" stroke-width="1" />
@@ -440,10 +342,9 @@
         </svg>
       </section>
 
-      <!-- SECTION 15: FOOTER -->
+      <!-- SECTION 9: FOOTER -->
       <footer class="invite-footer">
-        <p class="footer-names">Yousaf &amp; Gulle e Yousaf</p>
-        <p class="footer-tagline">Royal Grace Edition &middot; January 31, 2027</p>
+        <p class="footer-tagline">20 December 2026 &middot; Noor Palace</p>
       </footer>
     </div>
   </main>
@@ -452,7 +353,7 @@
   <div class="corner-floral corner-floral-left" aria-hidden="true"></div>
   <div class="corner-floral corner-floral-right" aria-hidden="true"></div>
 
-  <script src="music.js"></script>
-  <script src="app.js"></script>
+  <script src="music.js?v=13"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>

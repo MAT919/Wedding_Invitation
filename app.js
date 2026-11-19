@@ -1,15 +1,15 @@
 /**
- * Royal Grace — Yousaf & Gulle e Yousaf Wedding Invitation Interactions
+ * Royal Grace — Muhammad Yousaf Malik & Gulnaz Amjad Wedding Invitation
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("locked");
 
   /* ----------------------------------------------------------------------
-     1. PRELOADER & GATEFOLD REVEAL
+     1. PRELOADER & ROYAL CURTAIN REVEAL
      ---------------------------------------------------------------------- */
   const preloader = document.getElementById("preloader");
-  const gatefold = document.getElementById("gatefold");
+  const curtainStage = document.getElementById("curtain-stage");
   const openInviteBtn = document.getElementById("open-invite-btn");
 
   setTimeout(() => {
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 950);
 
   openInviteBtn.addEventListener("click", () => {
-    gatefold.classList.add("opened");
+    curtainStage.classList.add("opened");
     document.body.classList.remove("locked");
 
     // Start romantic wedding music on user gesture
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-      gatefold.style.display = "none";
-    }, 1500);
+      curtainStage.style.display = "none";
+    }, 34000);
   });
 
   /* ----------------------------------------------------------------------
@@ -91,152 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------------------
-     3. INTERACTIVE SCRATCH-TO-REVEAL EMERALD GLITTER HEART
-     ---------------------------------------------------------------------- */
-  const canvas = document.getElementById("scratch-canvas");
-  const revealFallbackBtn = document.getElementById("reveal-fallback-btn");
-  const ctx = canvas.getContext("2d");
-  let isDrawing = false;
-  let isRevealed = false;
-
-  function drawEmeraldGlitterHeart() {
-    const w = canvas.width;
-    const h = canvas.height;
-    ctx.clearRect(0, 0, w, h);
-
-    // Cream card cover backdrop
-    ctx.fillStyle = "#efe5d5";
-    ctx.fillRect(0, 0, w, h);
-
-    // Heart path
-    ctx.save();
-    ctx.beginPath();
-    const cx = w / 2;
-    const cy = h / 2 + 6;
-    ctx.moveTo(cx, cy + 58);
-    ctx.bezierCurveTo(cx - 95, cy - 5, cx - 85, cy - 90, cx, cy - 38);
-    ctx.bezierCurveTo(cx + 85, cy - 90, cx + 95, cy - 5, cx, cy + 58);
-    ctx.closePath();
-
-    const grad = ctx.createLinearGradient(0, 20, w, h - 20);
-    grad.addColorStop(0, "#355338");
-    grad.addColorStop(0.5, "#4a6b48");
-    grad.addColorStop(1, "#243b25");
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Clip to heart for glitter sparkles
-    ctx.clip();
-    for (let i = 0; i < 420; i++) {
-      const gx = Math.random() * w;
-      const gy = Math.random() * h;
-      const r = Math.random() * 1.9 + 0.4;
-      ctx.fillStyle =
-        Math.random() > 0.35
-          ? `rgba(228, 203, 148, ${Math.random() * 0.65 + 0.2})`
-          : `rgba(255, 255, 255, ${Math.random() * 0.5 + 0.2})`;
-      ctx.beginPath();
-      ctx.arc(gx, gy, r, 0, Math.PI * 2);
-      ctx.fill();
-    }
-    ctx.restore();
-
-    // Subtle label on heart
-    ctx.fillStyle = "rgba(250, 246, 240, 0.9)";
-    ctx.font = "500 13px Cinzel, serif";
-    ctx.textAlign = "center";
-    ctx.fillText("SCRATCH HERE", cx, cy + 4);
-  }
-
-  drawEmeraldGlitterHeart();
-
-  function getPointerPos(e) {
-    const rect = canvas.getBoundingClientRect();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    return {
-      x: ((clientX - rect.left) / rect.width) * canvas.width,
-      y: ((clientY - rect.top) / rect.height) * canvas.height,
-    };
-  }
-
-  function scratchAt(pos) {
-    if (isRevealed) return;
-    ctx.globalCompositeOperation = "destination-out";
-    ctx.beginPath();
-    ctx.arc(pos.x, pos.y, 22, 0, Math.PI * 2);
-    ctx.fill();
-    checkRevealProgress();
-  }
-
-  function checkRevealProgress() {
-    if (isRevealed) return;
-    const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
-    let cleared = 0;
-    const total = pixels.length / 4;
-    for (let i = 3; i < pixels.length; i += 16) {
-      if (pixels[i] === 0) cleared++;
-    }
-    if (cleared / (total / 4) > 0.38) {
-      completeScratchReveal();
-    }
-  }
-
-  function completeScratchReveal() {
-    isRevealed = true;
-    canvas.classList.add("cleared");
-    revealFallbackBtn.classList.add("hidden");
-  }
-
-  canvas.addEventListener("mousedown", (e) => {
-    isDrawing = true;
-    scratchAt(getPointerPos(e));
-  });
-  window.addEventListener("mousemove", (e) => {
-    if (isDrawing) scratchAt(getPointerPos(e));
-  });
-  window.addEventListener("mouseup", () => {
-    isDrawing = false;
-  });
-
-  canvas.addEventListener(
-    "touchstart",
-    (e) => {
-      isDrawing = true;
-      scratchAt(getPointerPos(e));
-    },
-    { passive: true }
-  );
-  canvas.addEventListener(
-    "touchmove",
-    (e) => {
-      if (isDrawing) scratchAt(getPointerPos(e));
-    },
-    { passive: true }
-  );
-  canvas.addEventListener("touchend", () => {
-    isDrawing = false;
-  });
-
-  revealFallbackBtn.addEventListener("click", completeScratchReveal);
-
-  /* ----------------------------------------------------------------------
-     4. SAVE THE DATE (.ICS DOWNLOAD)
+     3. SAVE THE DATE (.ICS DOWNLOAD)
      ---------------------------------------------------------------------- */
   const saveDateBtn = document.getElementById("save-date-btn");
   saveDateBtn.addEventListener("click", () => {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Yousaf & Gulle e Yousaf//Wedding Invitation//EN",
+      "PRODID:-//Muhammad Yousaf Malik & Gulnaz Amjad//Wedding Invitation//EN",
       "BEGIN:VEVENT",
-      "UID:yousaf-gulle-e-yousaf-20270131@royalgrace",
-      "DTSTAMP:20261115T180000Z",
-      "DTSTART:20270131T103000",
-      "DTEND:20270131T160000",
-      "SUMMARY:Wedding Ceremony of Yousaf & Gulle e Yousaf",
-      "DESCRIPTION:Join us in celebrating the Nikah & Wedding Ceremony of Yousaf & Gulle e Yousaf.",
-      "LOCATION:Grand Royal Palace Hall, City Centre",
+      "UID:yousaf-gulnaz-barat-20261219@royalgrace",
+      "DTSTAMP:20261119T180000Z",
+      "DTSTART:20261219T140000",
+      "DTEND:20261219T190000",
+      "SUMMARY:Wedding Celebration of Muhammad Yousaf Malik & Gulnaz Amjad",
+      "DESCRIPTION:Mehndi: Fri 18 Dec 2026 (7:00 PM) | Barat: Sat 19 Dec 2026 (2:00 PM) | Waleema: Sun 20 Dec 2026 (2:00 PM) at Noor Palace, Kotla Arab Ali Khan.",
+      "LOCATION:Noor Palace, Kotla Rd, near Zahid Fuelling Station, Kotla Arab Ali Khan",
       "END:VEVENT",
       "END:VCALENDAR",
     ].join("\r\n");
@@ -245,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Yousaf-and-Gulle-e-Yousaf-Wedding.ics";
+    a.download = "Muhammad-Yousaf-Malik-and-Gulnaz-Amjad-Wedding.ics";
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -253,32 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------------------
-     5. COUPLE PHOTO CAROUSEL
+     4. LIVE COUNTDOWN TIMER (Barat: Dec 19, 2026 at 2:00 PM)
      ---------------------------------------------------------------------- */
-  const slides = document.querySelectorAll(".carousel-slide");
-  const dots = document.querySelectorAll(".carousel-dots .dot");
-  const prevBtn = document.getElementById("carousel-prev");
-  const nextBtn = document.getElementById("carousel-next");
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    currentSlide = (index + slides.length) % slides.length;
-    slides.forEach((s, i) => s.classList.toggle("active", i === currentSlide));
-    dots.forEach((d, i) => d.classList.toggle("active", i === currentSlide));
-  }
-
-  prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
-  nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
-  dots.forEach((dot) => {
-    dot.addEventListener("click", () => showSlide(Number(dot.dataset.index)));
-  });
-
-  setInterval(() => showSlide(currentSlide + 1), 6000);
-
-  /* ----------------------------------------------------------------------
-     6. LIVE COUNTDOWN TIMER (Jan 31, 2027 10:30 AM)
-     ---------------------------------------------------------------------- */
-  const targetDate = new Date("2027-01-31T10:30:00").getTime();
+  const targetDate = new Date("2026-12-19T14:00:00").getTime();
   const cdDays = document.getElementById("cd-days");
   const cdHours = document.getElementById("cd-hours");
   const cdMinutes = document.getElementById("cd-minutes");
@@ -318,66 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
   /* ----------------------------------------------------------------------
-     8. RSVP FORM & LOCAL WISHES WALL
-     ---------------------------------------------------------------------- */
-  const rsvpForm = document.getElementById("rsvp-form");
-  const rsvpSuccess = document.getElementById("rsvp-success");
-  const wishesWall = document.getElementById("wishes-wall");
-  const wishesList = document.getElementById("wishes-list");
-  const STORAGE_KEY = "yousaf_gulle_rsvps_v1";
-
-  function renderWishes() {
-    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    if (saved.length === 0) return;
-    wishesWall.classList.remove("hidden");
-    wishesList.innerHTML = "";
-    saved
-      .slice()
-      .reverse()
-      .forEach((item) => {
-        const card = document.createElement("div");
-        card.className = "wish-item";
-
-        const meta = document.createElement("div");
-        meta.className = "wish-meta";
-        const nameEl = document.createElement("span");
-        nameEl.textContent = item.name;
-        const statusEl = document.createElement("span");
-        statusEl.className = "wish-status";
-        statusEl.textContent = item.attending;
-        meta.appendChild(nameEl);
-        meta.appendChild(statusEl);
-        card.appendChild(meta);
-
-        if (item.message) {
-          const msgEl = document.createElement("p");
-          msgEl.textContent = item.message;
-          card.appendChild(msgEl);
-        }
-        wishesList.appendChild(card);
-      });
-  }
-
-  renderWishes();
-
-  rsvpForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("guest-name").value.trim();
-    const attending = document.getElementById("guest-attending").value;
-    const message = document.getElementById("guest-message").value.trim();
-    if (!name || !attending) return;
-
-    const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-    existing.push({ name, attending, message, date: new Date().toISOString() });
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
-
-    rsvpForm.reset();
-    rsvpSuccess.classList.remove("hidden");
-    renderWishes();
-  });
-
-  /* ----------------------------------------------------------------------
-     9. LANGUAGE SWITCHER (ENGLISH / URDU)
+     8. LANGUAGE SWITCHER (ENGLISH / URDU)
      ---------------------------------------------------------------------- */
   const langToggle = document.getElementById("lang-toggle");
   const langLabel = document.getElementById("lang-label");
@@ -386,57 +174,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const translations = {
     en: {
       tapToOpen: "TAP TO OPEN",
-      wereGettingMarried: "WE'RE GETTING MARRIED",
-      groomParentage: "Son of Mr. & Mrs. Tariq",
-      brideParentage: "Daughter of Mr. & Mrs. Khan",
+      togetherFamilies: "TOGETHER WITH THEIR FAMILIES",
+      delightedInvite: "WE ARE DELIGHTED TO INVITE YOU TO THE WEDDING CELEBRATION OF",
+      heroBlessing:
+        "We would be honoured by your presence to bless the newlyweds as they begin their new journey together.",
       scroll: "Scroll",
       welcomeText:
-        "We are honored to welcome you to the Wedding ceremony of <strong>Yousaf &amp; Gulle e Yousaf</strong>. As they begin their journey together in faith and love, we thank you for being part of this blessed occasion ❤",
-      scratchTitle: "Scratch to Reveal",
-      scratchHint: "Gently rub the emerald heart below to reveal our wedding date",
+        "Together with their families, we are delighted to invite you to the wedding celebration of <strong>Muhammad Yousaf Malik &amp; Gulnaz Amjad</strong>. We would be honoured by your presence to bless the newlyweds as they begin their new journey together ❤",
       saveTheDate: "Save the Date",
       countdownTitle: "Counting Down to Forever",
       days: "Days",
       hours: "Hours",
       minutes: "Minutes",
       seconds: "Seconds",
-      timelineTitle: "Program Timeline",
-      venueTitle: "Venue",
-      dressCodeTitle: "Dress Code",
-      preWeddingTitle: "Pre-Wedding Events",
-      transportTitle: "Transportation",
-      accommodationTitle: "Accommodation",
-      giftsTitle: "Gifts",
-      giftsCopy: "Your love, blessings, and presence are the greatest gifts we could ever ask for.",
-      sendMessage: "Send Message",
-      closingLine: "We can't wait to celebrate with you!",
+      timelineTitle: "Wedding Celebrations",
+      venuesTitle: "Wedding Venues",
+      baratVenueKicker: "VENUE (BARAT)",
+      venueKicker: "VENUE (WALEEMA)",
+      openDirections: "Open in Google Maps",
+      closingLine: "Your presence will make our celebration more memorable.",
     },
     ur: {
       tapToOpen: "دعوت نامہ کھولیں",
-      wereGettingMarried: "ہماری شادی کی تقریب",
-      groomParentage: "فرزندِ جناب و محترمہ طارق",
-      brideParentage: "دخترِ جناب و محترمہ خان",
+      togetherFamilies: "اپنے اہلِ خانہ کے ہمراہ",
+      delightedInvite: "ہم آپ کو خوشی کے ساتھ شادی کی تقریب میں مدعو کرتے ہیں",
+      heroBlessing:
+        "نئے سفر کے آغاز پر نوبیاہتا جوڑے کو دعاؤں سے نوازنے کے لیے آپ کی تشریف آوری ہمارے لیے باعثِ اعزاز ہوگی۔",
       scroll: "نیچے دیکھیں",
       welcomeText:
-        "ہمیں آپ کو <strong>یوسف اور گلِ یوسف</strong> کی تقریبِ نکاح و شادی میں خوش آمدید کہتے ہوئے بے حد مسرت ہو رہی ہے۔ اس مبارک موقع پر آپ کی شرکت ہمارے لیے باعثِ برکت ہے ❤",
-      scratchTitle: "تاریخ دیکھنے کے لیے کھرچیں",
-      scratchHint: "شادی کی تاریخ جاننے کے لیے نیچے سبز دل کو ہلکا سا رگڑیں",
+        "ہم اپنے اہلِ خانہ کے ہمراہ آپ کو <strong>محمد یوسف ملک اور گلناز امجد</strong> کی شادی کی تقریب میں خوش آمدید کہتے ہیں۔ آپ کی تشریف آوری اور دعائیں ہمارے لیے باعثِ مسرت ہوں گی ❤",
       saveTheDate: "تاریخ محفوظ کریں",
       countdownTitle: "حسین لمحوں کا انتظار",
       days: "دن",
       hours: "گھنٹے",
       minutes: "منٹ",
       seconds: "سیکنڈ",
-      timelineTitle: "تقریبات کی تفصیل",
-      venueTitle: "مقامِ تقریب",
-      dressCodeTitle: "لباس",
-      preWeddingTitle: "شادی سے قبل کی تقریبات",
-      transportTitle: "آمد و رفت",
-      accommodationTitle: "رہائش",
-      giftsTitle: "تحائف",
-      giftsCopy: "آپ کی محبت، دعائیں اور تشریف آوری ہی ہمارے لیے سب سے بڑا تحفہ ہے۔",
-      sendMessage: "پیغام بھیجیں",
-      closingLine: "ہم آپ کے ساتھ خوشیاں بانٹنے کے منتظر ہیں!",
+      timelineTitle: "شادی کی تقریبات",
+      venuesTitle: "تقریبات کے مقامات",
+      baratVenueKicker: "مقامِ بارات",
+      venueKicker: "مقامِ ولیمہ",
+      openDirections: "گوگل میپس میں کھولیں",
+      closingLine: "آپ کی تشریف آوری ہماری خوشیوں کو مزید یادگار بنا دے گی۔",
     },
   };
 
