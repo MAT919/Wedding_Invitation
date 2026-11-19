@@ -40,26 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------------------
-     2. AUDIO & TRACK MENU CONTROLS
+     2. AUDIO TOGGLE CONTROL
      ---------------------------------------------------------------------- */
   const audioToggle = document.getElementById("audio-toggle");
   const iconSoundOn = document.getElementById("icon-sound-on");
   const iconSoundOff = document.getElementById("icon-sound-off");
-  const eqBars = document.getElementById("eq-bars");
-  const musicMenuBtn = document.getElementById("music-menu-btn");
-  const musicPopover = document.getElementById("music-popover");
-  const trackLabel = document.getElementById("current-track-label");
-  const trackOptions = document.querySelectorAll(".track-option");
-  const customAudioInput = document.getElementById("custom-audio-input");
 
-  function syncAudioUI({ isPlaying, trackName, trackIndex }) {
+  function syncAudioUI({ isPlaying }) {
     iconSoundOn.classList.toggle("hidden", !isPlaying);
     iconSoundOff.classList.toggle("hidden", isPlaying);
-    eqBars.classList.toggle("playing", isPlaying);
-    trackLabel.textContent = trackName;
-    trackOptions.forEach((btn, idx) => {
-      btn.classList.toggle("active", idx === trackIndex);
-    });
   }
 
   if (window.weddingMusic) {
@@ -68,35 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   audioToggle.addEventListener("click", () => {
     window.weddingMusic.toggle();
-  });
-
-  musicMenuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    musicPopover.classList.toggle("hidden");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!musicPopover.contains(e.target) && e.target !== musicMenuBtn) {
-      musicPopover.classList.add("hidden");
-    }
-  });
-
-  trackOptions.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const idx = Number(btn.dataset.track);
-      window.weddingMusic.setTrack(idx);
-      if (!window.weddingMusic.isPlaying) {
-        window.weddingMusic.play();
-      }
-    });
-  });
-
-  customAudioInput.addEventListener("change", (e) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      window.weddingMusic.loadCustomFile(file);
-      musicPopover.classList.add("hidden");
-    }
   });
 
   /* ----------------------------------------------------------------------
@@ -189,74 +149,4 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-  /* ----------------------------------------------------------------------
-     8. LANGUAGE SWITCHER (ENGLISH / URDU)
-     ---------------------------------------------------------------------- */
-  const langToggle = document.getElementById("lang-toggle");
-  const langLabel = document.getElementById("lang-label");
-  let currentLang = "en";
-
-  const translations = {
-    en: {
-      tapToOpen: "TAP TO OPEN",
-      heroPoem:
-        "In the Center of the Heart of All the Parents,<br />There Is a Warm Wish That Their Child Leads a Life of Total Bliss.",
-      heroHosts: "MR. &amp; MRS. MUHAMMAD ILYAS MALIK",
-      delightedInvite: "request your presence at the Wedding Ceremony of their Beloved Son",
-      heroBlessing:
-        "We would be honoured by your presence to bless the newlyweds as they begin their new journey together.",
-      scroll: "Scroll",
-      welcomeText:
-        "Together with their families, we are delighted to invite you to the wedding celebration of <strong>Muhammad Yousaf Malik &amp; Gulnaz Amjad</strong>. We would be honoured by your presence to bless the newlyweds as they begin their new journey together ❤",
-      saveTheDate: "Save the Date",
-      countdownTitle: "Counting Down to Forever",
-      days: "Days",
-      hours: "Hours",
-      minutes: "Minutes",
-      seconds: "Seconds",
-      timelineTitle: "Wedding Celebrations",
-      venuesTitle: "Wedding Venues",
-      baratVenueKicker: "VENUE (BARAT)",
-      venueKicker: "VENUE (WALEEMA)",
-      openDirections: "Open in Google Maps",
-      closingLine: "Your presence will make our celebration more memorable.",
-    },
-    ur: {
-      tapToOpen: "دعوت نامہ کھولیں",
-      heroPoem:
-        "ہر والدین کے دل کی گہرائی میں یہ دعا ہوتی ہے کہ ان کی اولاد خوشیوں بھری زندگی گزارے۔",
-      heroHosts: "جناب و محترمہ محمد الیاس ملک",
-      delightedInvite: "آپ کو اپنے عزیز فرزند کی تقریبِ شادی میں شرکت کی پُرخلوص دعوت دیتے ہیں",
-      heroBlessing:
-        "نئے سفر کے آغاز پر نوبیاہتا جوڑے کو دعاؤں سے نوازنے کے لیے آپ کی تشریف آوری ہمارے لیے باعثِ اعزاز ہوگی۔",
-      scroll: "نیچے دیکھیں",
-      welcomeText:
-        "ہم اپنے اہلِ خانہ کے ہمراہ آپ کو <strong>محمد یوسف ملک اور گلناز امجد</strong> کی شادی کی تقریب میں خوش آمدید کہتے ہیں۔ آپ کی تشریف آوری اور دعائیں ہمارے لیے باعثِ مسرت ہوں گی ❤",
-      saveTheDate: "تاریخ محفوظ کریں",
-      countdownTitle: "حسین لمحوں کا انتظار",
-      days: "دن",
-      hours: "گھنٹے",
-      minutes: "منٹ",
-      seconds: "سیکنڈ",
-      timelineTitle: "شادی کی تقریبات",
-      venuesTitle: "تقریبات کے مقامات",
-      baratVenueKicker: "مقامِ بارات",
-      venueKicker: "مقامِ ولیمہ",
-      openDirections: "گوگل میپس میں کھولیں",
-      closingLine: "آپ کی تشریف آوری ہماری خوشیوں کو مزید یادگار بنا دے گی۔",
-    },
-  };
-
-  langToggle.addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "ur" : "en";
-    langLabel.textContent = currentLang === "en" ? "اردو" : "English";
-    const dict = translations[currentLang];
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key]) {
-        el.innerHTML = dict[key];
-      }
-    });
-  });
 });
