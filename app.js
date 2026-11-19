@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       curtainStage.style.display = "none";
-    }, 34000);
+    }, 5100);
   });
 
   /* ----------------------------------------------------------------------
@@ -109,12 +109,29 @@ document.addEventListener("DOMContentLoaded", () => {
       "VERSION:2.0",
       "PRODID:-//Muhammad Yousaf Malik & Gulnaz Amjad//Wedding Invitation//EN",
       "BEGIN:VEVENT",
+      "UID:yousaf-gulnaz-mehndi-20261218@royalgrace",
+      "DTSTAMP:20261119T180000Z",
+      "DTSTART:20261218T190000",
+      "DTEND:20261218T230000",
+      "SUMMARY:Mehndi — Muhammad Yousaf Malik & Gulnaz Amjad",
+      "DESCRIPTION:Mehndi celebration of Muhammad Yousaf Malik & Gulnaz Amjad starting at 7:00 PM.",
+      "END:VEVENT",
+      "BEGIN:VEVENT",
       "UID:yousaf-gulnaz-barat-20261219@royalgrace",
       "DTSTAMP:20261119T180000Z",
-      "DTSTART:20261219T140000",
-      "DTEND:20261219T190000",
-      "SUMMARY:Wedding Celebration of Muhammad Yousaf Malik & Gulnaz Amjad",
-      "DESCRIPTION:Mehndi: Fri 18 Dec 2026 (7:00 PM) | Barat: Sat 19 Dec 2026 (2:00 PM) | Waleema: Sun 20 Dec 2026 (2:00 PM) at Noor Palace, Kotla Arab Ali Khan.",
+      "DTSTART:20261219T180000",
+      "DTEND:20261219T230000",
+      "SUMMARY:Barat — Muhammad Yousaf Malik & Gulnaz Amjad",
+      "DESCRIPTION:Barat wedding ceremony of Muhammad Yousaf Malik & Gulnaz Amjad starting at 6:00 PM.",
+      "LOCATION:Gujrat",
+      "END:VEVENT",
+      "BEGIN:VEVENT",
+      "UID:yousaf-gulnaz-waleema-20261220@royalgrace",
+      "DTSTAMP:20261119T180000Z",
+      "DTSTART:20261220T140000",
+      "DTEND:20261220T180000",
+      "SUMMARY:Waleema — Muhammad Yousaf Malik & Gulnaz Amjad",
+      "DESCRIPTION:Waleema reception of Muhammad Yousaf Malik & Gulnaz Amjad starting at 2:00 PM.",
       "LOCATION:Noor Palace, Kotla Rd, near Zahid Fuelling Station, Kotla Arab Ali Khan",
       "END:VEVENT",
       "END:VCALENDAR",
@@ -132,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* ----------------------------------------------------------------------
-     4. LIVE COUNTDOWN TIMER (Barat: Dec 19, 2026 at 2:00 PM)
+     4. LIVE COUNTDOWN TIMER (Barat: Dec 19, 2026 at 6:00 PM)
      ---------------------------------------------------------------------- */
-  const targetDate = new Date("2026-12-19T14:00:00").getTime();
+  const targetDate = new Date("2026-12-19T18:00:00").getTime();
   const cdDays = document.getElementById("cd-days");
   const cdHours = document.getElementById("cd-hours");
   const cdMinutes = document.getElementById("cd-minutes");
@@ -183,8 +200,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const translations = {
     en: {
       tapToOpen: "TAP TO OPEN",
-      togetherFamilies: "TOGETHER WITH THEIR FAMILIES",
-      delightedInvite: "WE ARE DELIGHTED TO INVITE YOU TO THE WEDDING CELEBRATION OF",
+      heroPoem:
+        "In the Center of the Heart of All the Parents,<br />There Is a Warm Wish That Their Child Leads a Life of Total Bliss.",
+      heroHosts: "MR. &amp; MRS. MUHAMMAD ILYAS MALIK",
+      delightedInvite: "request your presence at the Wedding Ceremony of their Beloved Son",
       heroBlessing:
         "We would be honoured by your presence to bless the newlyweds as they begin their new journey together.",
       scroll: "Scroll",
@@ -205,8 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     ur: {
       tapToOpen: "دعوت نامہ کھولیں",
-      togetherFamilies: "اپنے اہلِ خانہ کے ہمراہ",
-      delightedInvite: "ہم آپ کو خوشی کے ساتھ شادی کی تقریب میں مدعو کرتے ہیں",
+      heroPoem:
+        "ہر والدین کے دل کی گہرائی میں یہ دعا ہوتی ہے کہ ان کی اولاد خوشیوں بھری زندگی گزارے۔",
+      heroHosts: "جناب و محترمہ محمد الیاس ملک",
+      delightedInvite: "آپ کو اپنے عزیز فرزند کی تقریبِ شادی میں شرکت کی پُرخلوص دعوت دیتے ہیں",
       heroBlessing:
         "نئے سفر کے آغاز پر نوبیاہتا جوڑے کو دعاؤں سے نوازنے کے لیے آپ کی تشریف آوری ہمارے لیے باعثِ اعزاز ہوگی۔",
       scroll: "نیچے دیکھیں",

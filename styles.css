@@ -145,7 +145,7 @@ body.locked {
   z-index: 20;
   background: linear-gradient(180deg, #e7cf96 0%, #b89047 55%, #7a5c24 100%);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-  transition: transform 10s ease 22s, opacity 10s ease 22s;
+  transition: transform 1.5s ease 3.5s, opacity 1.5s ease 3.5s;
 }
 
 .curtain-stage.opened .curtain-rod {
@@ -162,9 +162,9 @@ body.locked {
   box-shadow: inset 0 24px 55px rgba(0, 0, 0, 0.42);
   overflow: hidden;
   transition:
-    transform 33s cubic-bezier(0.35, 0.04, 0.25, 1),
-    opacity 18s ease 14s,
-    border-radius 33s ease;
+    transform 5s cubic-bezier(0.45, 0.05, 0.25, 1),
+    opacity 2.5s ease 2.5s,
+    border-radius 5s ease;
 }
 
 .curtain-left {
@@ -267,7 +267,7 @@ body.locked {
   cursor: pointer;
   text-align: center;
   color: var(--sage-dark);
-  transition: transform 5s ease, opacity 5s ease, box-shadow 0.35s ease;
+  transition: transform 1.2s ease, opacity 1.2s ease, box-shadow 0.35s ease;
   animation: gentleFloat 3.6s ease-in-out infinite;
 }
 
@@ -606,20 +606,33 @@ body.locked {
   padding: 28px 22px;
 }
 
-.hero-eyebrow {
+.hero-poem {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.3vw, 1.2rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ink);
+  text-shadow: 0 1px 10px rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+}
+
+.hero-hosts {
   font-family: var(--font-display);
-  font-size: 0.78rem;
-  letter-spacing: 0.3em;
+  font-size: clamp(0.92rem, 2.4vw, 1.18rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: var(--sage-dark);
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.9);
   margin-bottom: 6px;
 }
 
 .hero-subeyebrow {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  color: var(--ink-soft);
-  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.2vw, 1.16rem);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  margin-bottom: 18px;
 }
 
 .hero-names {
@@ -627,7 +640,7 @@ body.locked {
   font-weight: 500;
   font-size: clamp(1.35rem, 4.4vw, 3.1rem);
   line-height: 1.2;
-  color: var(--sage-dark);
+  color: var(--gold-deep);
   text-shadow: 0 2px 18px rgba(255, 255, 255, 0.88);
   margin-bottom: 22px;
 }
@@ -635,6 +648,7 @@ body.locked {
 .hero-names .name-line {
   display: block;
   white-space: nowrap;
+  color: var(--gold-deep);
 }
 
 .hero-names .name-parentage {
@@ -655,7 +669,7 @@ body.locked {
   display: block;
   font-family: var(--font-couple);
   font-size: 0.56em;
-  color: var(--gold-deep);
+  color: var(--sage-dark);
   margin: 22px 0 18px;
 }
 
@@ -793,9 +807,11 @@ body.locked {
 
 /* Welcome */
 .bismillah {
-  font-size: 1.45rem;
+  font-size: clamp(1.9rem, 4.8vw, 2.55rem);
+  line-height: 1.4;
   color: var(--gold-deep);
-  margin-bottom: 14px;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.85);
+  margin-bottom: 16px;
 }
 
 .welcome-text {
@@ -829,6 +845,32 @@ body.locked {
   justify-content: center;
   overflow: hidden;
   user-select: none;
+}
+
+.scratch-card.save-dates-card {
+  width: min(370px, 100%);
+  height: auto;
+  padding: 6px 10px;
+}
+
+.save-dates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.save-date-row {
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  color: var(--ink);
+}
+
+.save-date-row strong {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  color: var(--sage-dark);
 }
 
 .scratch-revealed-content {
