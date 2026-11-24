@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "DTEND:20261219T230000",
       "SUMMARY:Barat — Muhammad Yousaf Malik & Gulnaz Amjad",
       "DESCRIPTION:Barat wedding ceremony of Muhammad Yousaf Malik & Gulnaz Amjad starting at 6:00 PM.",
-      "LOCATION:Gujrat",
+      "LOCATION:Nisar Marquee Gujrat, Shaheen Chowk, GT Rd, near Haq Bahu Tuff Tile Factory, Jakhar Market, Gujrat, 50700",
       "END:VEVENT",
       "BEGIN:VEVENT",
       "UID:yousaf-gulnaz-waleema-20261220@royalgrace",
@@ -149,4 +149,27 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+  /* ----------------------------------------------------------------------
+     6. VENUE TOGGLE BUTTONS (BARAT / WALEEMA)
+     ---------------------------------------------------------------------- */
+  const venueBtns = document.querySelectorAll(".venue-toggle-btn");
+  const venuePanels = {
+    barat: document.getElementById("venue-panel-barat"),
+    waleema: document.getElementById("venue-panel-waleema"),
+  };
+
+  venueBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = btn.dataset.venue;
+      venueBtns.forEach((b) => {
+        const isActive = b === btn;
+        b.classList.toggle("active", isActive);
+        b.setAttribute("aria-selected", String(isActive));
+      });
+      Object.entries(venuePanels).forEach(([key, panel]) => {
+        if (panel) panel.classList.toggle("active", key === target);
+      });
+    });
+  });
 });
